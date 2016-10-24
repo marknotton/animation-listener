@@ -10,7 +10,8 @@ Listen for css animation and transition events. You can delay callbacks and targ
 - ~~transitionstart()~~ This doesn't exist, sorry.
 - ~~transitioniteration()~~ This doesn't exist, sorry.
 
-In each of the following functions, three parameters are returned to the function.
+
+Three parameters are returned to the function.
 
 | Param | Type   | Description
 | ----- | ------ | -----------
@@ -88,7 +89,7 @@ $('.box').animationend('one', function(e) {
    console.log('hello world');
 });
 ```
-
+### Go nuts
 If you really want go nuts, you're welcome to concatenate the functions together too.
 ```
 $('.box').animationstart(function(name) {
