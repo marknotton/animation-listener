@@ -1,4 +1,4 @@
-# Animation & Transition Listener
+# CSS Animation & Transition Listener
 
 Listen for css animation and transition events. You can delay callbacks and target specific transition types.
 
