@@ -22,14 +22,14 @@
   }
 
   function setListener($this, $arguments, $listener, _checkerTransition) {
-    var args       = Array.prototype.slice.call($arguments);
-    var options    = args.length > 1 ? args.slice(0,-1) : args;
-    var callback   = args.pop();
-    var animation  = false;
-    var type       = null;
-    var delay      = false;
-    var count      = 0;
-    var onOrOne    = 'on';
+    var args       = Array.prototype.slice.call($arguments),
+        options    = args.length > 1 ? args.slice(0,-1) : args,
+        callback   = args.pop(),
+        animation  = false,
+        type       = null,
+        delay      = false,
+        count      = 0,
+        onOrOne    = 'on';
 
     // OPTIONS
     if ( options.length ) {
@@ -53,13 +53,15 @@
     if (onOrOne == 'on') {
       $this.on($listener, function(event) {
         type = _checkerTransition === true ? event.originalEvent.animationName : event.originalEvent.propertyName;
-        return aniListener($this, event, callback, animation, delay, type, count++);
+        count ++;
+        return aniListener($this, event, callback, animation, delay, type, count);
       });
     } else {
     // ONE
       $this.one($listener, function(event) {
         type = _checkerTransition === true ? event.originalEvent.animationName : event.originalEvent.propertyName;
-        return aniListener($this, event, callback, animation, delay, type);
+        count ++;
+        return aniListener($this, event, callback, animation, delay, type, count);
       });
     }
   };
