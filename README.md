@@ -45,7 +45,7 @@ $('.box').animationend(2000, function() {
 
 If an animation loops, you can call a functioon on each iteration
 ```
-$('.box').animationiteration(function(type, count) {
+$('.box').animationiteration(function(name, count) {
   console.log('This animation has happened' + count + 'times');
 });
 ```
