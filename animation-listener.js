@@ -9,14 +9,14 @@
         var timer = setTimeout(function() {
           clearTimeout(timer);
           // console.log('callback has been called.');
-          return $callback.apply($this, [$type, $event, $count]);
+          return $callback.apply($this, [$type, $count, $event]);
         }, $delay);
       }
     } else {
       // Immediate Callback
       // console.log('callback has been called.');
       if ( $animation === false || $animation.indexOf($type) > -1)  {
-        return $callback.apply($this, [$type, $event, $count]);
+        return $callback.apply($this, [$type, $count, $event]);
       }
     }
   }
