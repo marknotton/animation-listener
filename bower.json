@@ -1,0 +1,31 @@
+{
+  "name": "animation-listener",
+  "ignore": [],
+  "homepage": "https://github.com/marknotton/animation-listener",
+  "author": {
+    "name": "Mark Notton",
+    "url": "http://www.marknotton.uk"
+  },
+  "description": "Listen to animation and transition events to trigger callbacks.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/marknotton/animation-listener"
+  },
+  "version": "1.0.0",
+  "_release": "1.0.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "1.0.0",
+    "commit": ""
+  },
+  "keywords": [
+    "transitionend",
+    "animationend",
+    "animationstart",
+    "animationiteration"
+  ],
+  "_source": "git://github.com/marknotton/animation-listener.git",
+  "_target": "^1.0.0",
+  "_originalSource": "marknotton"
+}
