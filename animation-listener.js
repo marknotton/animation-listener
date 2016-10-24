@@ -1,6 +1,6 @@
 (function($) {
 
-  function aniListener($this, $event, $callback, $animation, $delay, $type) {
+  function aniListener($this, $event, $callback, $animation, $delay, $type, $count) {
     // console.log($type + ' has finished.');
     if ( $delay && $delay !== 0 ) {
       // Delayed callback
@@ -9,14 +9,14 @@
         var timer = setTimeout(function() {
           clearTimeout(timer);
           // console.log('callback has been called.');
-          return $callback.apply($this, [$type, $event]);
+          return $callback.apply($this, [$type, $event, $count]);
         }, $delay);
       }
     } else {
       // Immediate Callback
       // console.log('callback has been called.');
       if ( $animation === false || $animation.indexOf($type) > -1)  {
-        return $callback.apply($this, [$type, $event]);
+        return $callback.apply($this, [$type, $event, $count]);
       }
     }
   }
@@ -28,6 +28,7 @@
     var animation  = false;
     var type       = null;
     var delay      = false;
+    var count      = 0;
     var onOrOne    = 'on';
 
     // OPTIONS
@@ -52,7 +53,7 @@
     if (onOrOne == 'on') {
       $this.on($listener, function(event) {
         type = _checkerTransition === true ? event.originalEvent.animationName : event.originalEvent.propertyName;
-        return aniListener($this, event, callback, animation, delay, type);
+        return aniListener($this, event, callback, animation, delay, type, count++);
       });
     } else {
     // ONE

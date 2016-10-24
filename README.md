@@ -10,11 +10,19 @@ Listen for css animation and transition events. You can delay callbacks and targ
 - ~~transitionstart()~~ This doesn't exist, sorry.
 - ~~transitioniteration()~~ This doesn't exist, sorry.
 
+In each of the following functions, three parameters are returned to the function.
+
+| Param | Type   | Description
+| ----- | ------ | -----------
+| 1     | string | The animation name or transition type.
+| 2     | number | The iteration count.
+| 3     | object | The full event object
+
 ### Animation Examples
 
-Call a function when the 'jump' animation ends. The animation name will be returned as the first parameter. The event object is returned as the second parameter (or third if using the animationiteration function).
+Call a function when the 'jump' animation ends.
 ```
-$('.box').animationend('jump', function(name, event) {
+$('.box').animationend('jump', function(name, count, event) {
    console.log(name + ' has finished transitioning');
    console.log(event);
 });
@@ -22,8 +30,8 @@ $('.box').animationend('jump', function(name, event) {
 
 Call a function when any animation has started.
 ```
-$('.box').transitionstart(function(name) {
-   console.log(name + 'transition has started');
+$('.box').animationstart(function(name) {
+   console.log(name + 'animation has started');
 });
 ```
 
@@ -71,6 +79,7 @@ $('.box').transitionend(2000, function() {
   console.log('transition ended 2 seconds ago');
 });
 ```
+----
 
 ### On or One
 Passing in the string ```'one'``` or ```'on'``` will adjust the type of event handler you'd prefer to use. 'on' is used by default. What's the different? [one](http://api.jquery.com/one/) removes the event listener after being run once. [on](http://api.jquery.com/on/) will continue to listen for the transition/animation event.
@@ -79,6 +88,20 @@ $('.box').animationend('one', function(e) {
    console.log('hello world');
 });
 ```
+
+If you really want go nuts, you're welcome to concatenate the functions together too.
+```
+$('.box').animationstart(function(name) {
+  console.log(name + ' animation has started');
+}).animationend(1000, function() {
+  console.log('and now it has ended, 1 second ago');
+}).animationiteration('jump', function(name, count) {
+  console.log('and the iteration count is: ' + count);
+}).transitionend(function() {
+  console.log('Just for fun, the transition end has been listened too');
+});
+```
+
 
 ## Help is always appreciated
 
