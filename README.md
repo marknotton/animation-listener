@@ -4,12 +4,12 @@ Listen for css animation and transition events. You can delay callbacks and targ
 
 ## Installation
 
-### NPM
+### [NPM](https://www.npmjs.com/package/animation-listener)
 ```
 npm i animation-listener
 ```
 
-### Yarn
+### [Yarn](https://yarnpkg.com/en/package/animation-listener)
 ```
 yarn add animation-listener
 ```
