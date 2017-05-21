@@ -1,0 +1,9 @@
+{
+  "name": "animation-listener",
+  "version": "1.0.0",
+  "description": "Listen for css animation and transition events. You can delay callbacks and target specific transition types.",
+  "main": "animation-listener.js",
+  "repository": "https://github.com/marknotton/animation-listener",
+  "author": "Mark Notton <mark@marknotton.uk>",
+  "license": "MIT"
+}
