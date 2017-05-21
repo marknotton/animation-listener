@@ -19,7 +19,6 @@ yarn add animation-listener
 bower install animation-listener
 ```
 
-
 ## Listener functions
 - animationend() - [Official Documenation](https://developer.mozilla.org/en-US/docs/Web/Events/animationstart)
 - animationstart() - [Official Documenation](https://developer.mozilla.org/en-US/docs/Web/Events/animationend)
