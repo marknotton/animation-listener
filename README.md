@@ -2,6 +2,24 @@
 
 Listen for css animation and transition events. You can delay callbacks and target specific transition types.
 
+## Installation
+
+### NPM
+```
+npm i animation-listener
+```
+
+### Yarn
+```
+yarn add animation-listener
+```
+
+### Bower
+```
+bower install animation-listener
+```
+
+
 ## Listener functions
 - animationend() - [Official Documenation](https://developer.mozilla.org/en-US/docs/Web/Events/animationstart)
 - animationstart() - [Official Documenation](https://developer.mozilla.org/en-US/docs/Web/Events/animationend)
